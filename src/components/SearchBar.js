@@ -18,7 +18,6 @@ class SearchBar extends React.Component {
     return (
       <div>
         <input type="text" onChange={this.handleChange} placeholder="Type tag..." value={this.state.input} />
-        {/* cia tipo callback - this.props.onData, atgal parsiunti input.value */}
         <Link to={{ pathname: '/search', query: { titles: this.state.input }}} ><button>Search</button></Link>
       </div>
     );

@@ -38,10 +38,9 @@ class SearchPage extends React.Component {
     return <p>No data</p>;
   }
 
-  //MediaWiki API call for images & update list array
+  //MediaWiki API call for images & update data array
   fetchImages = (query) => {
 
-    //this.props.history.pushState(null, "search?=" + input);
     this.setState({ dataLoading: true });
     const apiUrl = 'https://en.wikipedia.org/w/api.php?action=query&format=json&maxlag=3&origin=*&prop=imageinfo&titles=' + query.titles + '&generator=images&iiprop=timestamp%7Cuser%7Curl&gimlimit=6'
 
@@ -49,7 +48,6 @@ class SearchPage extends React.Component {
       dataType: "json",
       url: apiUrl,
       success: data => {
-
         if (data.query) {
           const images = data.query.pages;
           const imgObjects = _.map(images, value => {

@@ -7,8 +7,8 @@ const SearchResults = ({data}) => {
     return data.map((dataObj, index) =>
       <div key={index} className="col-xs-4">
         <div className="thumbnail">
-          <img src={dataObj.imageUrl} alt=""/>
-          <h3>{dataObj.title}</h3>
+          <img style={{ width: '300px', height: '200px'}} src={dataObj.imageUrl} alt=""/>
+          <h4>{dataObj.title}</h4>
         </div>
       </div>
     );
